@@ -1,9 +1,8 @@
-from fastapi import FastAPI, APIRouter
+from fastapi.testclient import TestClient
+from app.main import app
 
-app = FastAPI()
-router = APIRouter()
-app.include_router(router)
+client = TestClient(app)
 
-@router.get("/")
-def health_check():
-    return {"status": "ok"}
+def health_test():
+    response = client.get("/")
+    assert response.status_code == 200
