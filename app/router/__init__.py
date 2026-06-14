@@ -1,5 +1,5 @@
-from . import chat
+from .chat import router as chat_router
 
 __all__ = [
-    "chat"
+    "chat_router"
 ]
