@@ -1,5 +1,5 @@
-from .llm import generate_response
+from app.ai.client import LLMClient
 
 __all__ = [
-    "generate_response"
+    "LLMClient"
 ]
